@@ -22,4 +22,6 @@ people.groupBy("age").count().orderBy("age").show()
 print("Make everyone 10 years older:")
 people.select(people.name, people.age + 10).show()
 
+# desc_path="file:///opt/bitnami/spark/datasets/output/people"
+# people.write.mode('overwrite').save(desc_path)
 spark.stop()
