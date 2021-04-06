@@ -6,13 +6,7 @@ import collections
 # Create a SparkSession (Note, the config section is only for Windows!)
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
 
-
-def mapper(line):
-    return Row()
-
-lines = spark.sparkContext.textFile(
-    "file:///opt/bitnami/spark/datasets/fakefriends.csv")
-people = lines.map(mapper)
+# people = rdd
 
 # Infer the schema, and register the DataFrame as a table.
 schemaPeople = spark.createDataFrame(people).cache()
